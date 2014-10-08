@@ -1,0 +1,378 @@
+/* ==|====================
+   Layout/Constrained
+   ======================= */
+html{
+    height:100%;
+}
+body{
+    background-image: url(../img/bg3.png);
+    height:100%;
+    font-family: 'EB Garamond', serif;
+    color: #242424;
+
+    h1, h2, h3, h4 ,h5, h6{
+        font-family: 'Roboto Slab', serif;
+    }
+    i{
+        color: #242424;
+    }
+
+}
+
+.wrapper {
+    max-width: $wrapper-width;
+    padding: 0 pxtoem(20,16);
+
+    background-size:cover;
+    
+    @include container;
+    .left{
+        font-size:0.8em;
+        #nav_text{
+            display: block;
+        }
+        
+    }
+    #footer{
+            display: none;
+    }
+    .right{
+
+        .slide{
+                display: none;
+        }
+        
+        .line{
+                border-top:2px solid #242424;
+                width:40px;
+            }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+        
+        .description{
+            .line{
+                border-top:2px solid #242424;
+                width:40px;
+            }
+            font-size:1em;
+
+        }
+
+        .post{
+            @include span-columns(12,12);
+            position: relative;
+            display: inline-block;
+            margin-bottom:0;
+            text-align:center;
+
+            &.last{
+                @include omega;
+            }
+
+            img{
+                width:100%;
+            }
+
+            &:hover .thumbBG{
+                opacity:1;
+            }
+
+            &:hover .caption{
+                opacity:1;
+            }
+
+            .thumbBG{   
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color:#242424;
+                width: 100%;
+                height: 89%;
+
+                opacity: 0;
+               transition: opacity .25s ease-in-out;
+               -moz-transition: opacity .25s ease-in-out;
+               -webkit-transition: opacity .25s ease-in-out;
+            }
+            .caption{
+                position: relative;
+                top:-140px;
+                color:white;
+                width: 100%;
+                height: 80%;
+                z-index:999;
+
+
+                opacity: 0;
+               transition: opacity .5s ease-in-out;
+               -moz-transition: opacity .5s ease-in-out;
+               -webkit-transition: opacity .5s ease-in-out;
+            }
+        }
+
+        /*single post*/
+        .food_des{
+            img{
+                width:100%;
+                margin-bottom:20px;
+            }
+
+            #text{
+                @include span-columns(9, 9);
+                margin-bottom:10px;
+            }
+            #info{
+                @include span-columns(9, 9);
+                margin-bottom:10px;
+            }
+        }
+    }   
+}
+@include at-breakpoint(481px 12){     ///////////////////////tablet////////////////////////
+    .wrapper {
+        max-width: $wrapper-width;
+        padding: 0 pxtoem(20,16);
+
+        background-size:cover;
+        height:100%;
+        @include container;
+        .left{
+            font-size:0.8em;
+            #nav_text{
+                display: block;
+            }
+            
+        }
+        #footer{
+                display: none;
+        }
+        .right{
+            .slideMobile{
+                display: none;
+            }
+            .slide { 
+                display: block;
+                position:relative; 
+            }
+            .slide p { 
+                position:absolute; left:0; top:0; 
+            }
+
+            .line{
+                    border-top:2px solid #242424;
+                    width:40px;
+                }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+            
+            .description{
+                .line{
+                    border-top:2px solid #242424;
+                    width:40px;
+                }
+                font-size:1em;
+
+            }
+
+            .post{
+                @include span-columns(4,12);
+                position: relative;
+                display: inline-block;
+                margin-bottom:0;
+                text-align:center;
+
+                &.last{
+                    @include omega;
+                }
+
+                img{
+                    width:100%;
+                }
+
+                &:hover .thumbBG{
+                    opacity:1;
+                }
+
+                &:hover .caption{
+                    opacity:1;
+                }
+
+                .thumbBG{   
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-color:#242424;
+                    width: 100%;
+                    height: 89%;
+
+                    opacity: 0;
+                   transition: opacity .25s ease-in-out;
+                   -moz-transition: opacity .25s ease-in-out;
+                   -webkit-transition: opacity .25s ease-in-out;
+                }
+                .caption{
+                    position: relative;
+                    top:-140px;
+                    color:white;
+                    width: 100%;
+                    height: 80%;
+                    z-index:999;
+
+
+                    opacity: 0;
+                   transition: opacity .5s ease-in-out;
+                   -moz-transition: opacity .5s ease-in-out;
+                   -webkit-transition: opacity .5s ease-in-out;
+                }
+            }
+
+            /*single post*/
+            .food_des{
+                img{
+                    width:100%;
+                    margin-bottom:20px;
+                }
+
+                #text{
+                    @include span-columns(9, 9);
+                    margin-bottom:10px;
+                }
+                #info{
+                    @include span-columns(9, 9);
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+}
+
+@include at-breakpoint(769px 12){     ///////////////////////desktop////////////////////////
+    .wrapper {
+        max-width: $wrapper-width;
+        padding: 0 pxtoem(20,16);
+
+        background-size:cover;
+        height:100%;
+        
+        @include container;
+        .left{
+        	@include span-columns(2,12);
+            position:fixed;
+            font-size:0.8em;
+            #nav_text{
+            display: block;
+            }
+
+        }
+        #footer{
+                @include span-columns(2,12);
+                position:fixed;
+                bottom:20px;
+                font-size:1em;
+                display: block;
+        }
+        .right{
+
+        	@include span-columns(9 omega,12);
+            position:relative;  //margin left
+            left:10px;
+            margin-bottom:40px;
+            
+            .slideMobile{
+                display: none;
+            }
+            .slide { 
+                display: block;
+                position:relative; 
+            }
+            .slide p { 
+                position:absolute; left:0; top:0; 
+            }
+
+            .description{
+                .line{
+                    border-top:2px solid #242424;
+                    width:40px;
+                }
+                font-size:1em;
+
+            }
+
+            .post{
+                @include span-columns(3,9);
+                position: relative;
+                display: inline-block;
+                margin-bottom:0;
+                text-align:center;
+
+                &.last{
+                    @include omega;
+                }
+
+                img{
+                    width:100%;
+                }
+
+                &:hover .thumbBG{
+                    opacity:1;
+                }
+
+                &:hover .caption{
+                    opacity:1;
+                }
+
+                .thumbBG{   
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-color:#242424;
+                    width: 100%;
+                    height: 89%;
+
+                    opacity: 0;
+                   transition: opacity .25s ease-in-out;
+                   -moz-transition: opacity .25s ease-in-out;
+                   -webkit-transition: opacity .25s ease-in-out;
+                }
+                .caption{
+                    position: relative;
+                    top:-140px;
+                    color:white;
+                    width: 100%;
+                    height: 80%;
+                    z-index:999;
+
+
+                    opacity: 0;
+                   transition: opacity .5s ease-in-out;
+                   -moz-transition: opacity .5s ease-in-out;
+                   -webkit-transition: opacity .5s ease-in-out;
+                }
+            }
+
+            /*single post*/
+            .food_des{
+                img{
+                    width:100%;
+                    margin-bottom:20px;
+                }
+
+                #text{
+                    @include span-columns(6, 9);
+                    margin-bottom:20px;
+                }
+                #info{
+                    @include span-columns(3 omega, 9);
+                }
+            }
+        }
+
+        
+    }
+}
